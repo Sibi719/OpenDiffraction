@@ -9,10 +9,10 @@ R2=1.4*10^-3;
 Dimesnion=10*10^-3;
 del1=Dimesnion/N;
 zmin=N*del1*del1/Wavelength
-z=zmin;%N*del1*del1/Wavelength;
+z=0.1
 del2=(Wavelength*z)/(N*del1);
 
-Nmin=(N*del1)
+
 alpha1=0.001;
 beta1= 0.00002;
 alpha2=alpha1;
@@ -78,14 +78,5 @@ xlabel("x(mm)");
 ylabel("y(mm)");
 colormap(jet)
 colorbar
-% ax = gca;
-% outerpos = ax.OuterPosition;
-% ti = ax.TightInset; 
-% left = outerpos(1) + ti(1);
-% bottom = outerpos(2) + ti(2);
-% ax_width = outerpos(3) - ti(1) - ti(3);
-% ax_height = outerpos(4) - ti(2) - ti(4);
-% ax.Position = [left bottom ax_width ax_height];
-saveas(gcf,"D:\Papers\Open_Diffraction\4.png");
 
 
