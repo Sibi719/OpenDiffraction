@@ -9,7 +9,7 @@ d1=dimension/n;
 zmin=n*d1*d1/wavelength
 m=1;
 z1=0;
-z2=zmin;
+z2=2*zmin;
 zi=z2/(m+1);
 delz2=z2-zi;
 di=(wavelength*zi)/(n*d1);
@@ -42,20 +42,20 @@ T2 = k*beta2*L2;
 
 T= (exp(-(T1+T2))).^2;
 % 
-% figure
-% imagesc(x1*10^3,y1*10^3,T);
-% axis image
-% xlabel("x(mm)");
-% ylabel("y(mm)");
-% colorbar
-% colormap(jet)
-% 
-% figure
-% imagesc(x1*10^3,y1*10^3,phase);
-% axis image
-% xlabel("x(mm)");
-% ylabel("y(mm)");colorbar
-% colormap(jet)
+figure
+imagesc(x1*10^3,y1*10^3,T);
+axis image
+xlabel("x(mm)");
+ylabel("y(mm)");
+colorbar
+colormap(jet)
+
+figure
+imagesc(x1*10^3,y1*10^3,phase);
+axis image
+xlabel("x(mm)");
+ylabel("y(mm)");colorbar
+colormap(jet)
 
 I_o=ones(n);
 
@@ -93,12 +93,3 @@ xlabel("x(mm)");
 ylabel("y(mm)");
 colormap(jet)
 colorbar
-ax = gca;
-outerpos = ax.OuterPosition;
-ti = ax.TightInset; 
-left = outerpos(1) + ti(1);
-bottom = outerpos(2) + ti(2);
-ax_width = outerpos(3) - ti(1) - ti(3);
-ax_height = outerpos(4) - ti(2) - ti(4);
-ax.Position = [left bottom ax_width ax_height];
-saveas(gcf,"D:\Papers\Open_Diffraction\Figures\6.png");
